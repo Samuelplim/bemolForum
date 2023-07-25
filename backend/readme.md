@@ -16,6 +16,7 @@ Projeto desenvolvido para o processo seletivo Bemol Software Enginner II.<br>
 Inice o projeto com o comando:`npm run start`<br>
 Caso o projeto não inice verifique a versão do node e do TypeScript na sua maquina.<br>
 Versão atual do node: [https://nodejs.org/pt-br/download](https://nodejs.org/pt-br/download)
+
 Instalando o CLI do TypeScript<br>
 `npm install -g typescript`<br>
 
