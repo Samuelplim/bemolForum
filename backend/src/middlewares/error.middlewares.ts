@@ -1,5 +1,13 @@
 import { NextFunction, Request, Response } from "express";
-const AppError = require("./utils/AppError");
+class AppError {
+  message: string;
+  statusCode: number;
+
+  constructor(message: string, statusCode = 400) {
+    this.message = message;
+    this.statusCode = statusCode;
+  }
+}
 
 export const errorMiddleware = (
   error: any,
