@@ -9,9 +9,13 @@ class TopicsService {
   }
 
   async create(topics: TopicsInterface) {
-    throw new AppError("Tamanho mínimo para senha é de 8 dígitos");
+    if (!topics.title || !topics.content) {
+      throw new AppError("Preencha o titulo e a descrição");
+    }
 
-    return;
+    const topic = await this.topicsRepository.create(topics);
+
+    return topic;
   }
 }
 

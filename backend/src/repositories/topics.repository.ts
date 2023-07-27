@@ -2,7 +2,7 @@ import { TopicsInterface } from "../interfaces";
 import { Topics } from "../models/topics.model";
 
 class TopicsRepository {
-  getAll() {
+  index() {
     return Topics.find();
   }
 
