@@ -1,13 +1,5 @@
 import { NextFunction, Request, Response } from "express";
-class AppError {
-  message: string;
-  statusCode: number;
-
-  constructor(message: string, statusCode = 400) {
-    this.message = message;
-    this.statusCode = statusCode;
-  }
-}
+import { AppError } from "../utils/AppError";
 
 export const errorMiddleware = (
   error: any,
