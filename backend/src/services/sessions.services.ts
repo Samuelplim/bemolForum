@@ -5,14 +5,14 @@ import jwt from "jsonwebtoken";
 import { AppError } from "../utils/AppError";
 
 class SessionsService {
-  userRepository: any;
+  sessionsRepository: any;
 
-  constructor(userRepository: any) {
-    this.userRepository = userRepository;
+  constructor(sessionsRepository: any) {
+    this.sessionsRepository = sessionsRepository;
   }
 
   async create(customer: { email: string; password: string }) {
-    const customerResponse = await this.userRepository.findByEmail(
+    const customerResponse = await this.sessionsRepository.findByEmail(
       customer.email
     );
     if (!customerResponse) {
