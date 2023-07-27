@@ -10,18 +10,15 @@ class CustomerService {
   }
 
   async create(customer: CustomerInterface) {
+    if (customer.password.length < 7) {
+      throw new AppError("Tamanho mínimo para senha é de 8 dígitos");
+    }
     const verifyUserEmailExists = await this.userRepository.findByEmail(
       customer.email
     );
-
     if (verifyUserEmailExists) {
-      throw new AppError("Este email está a ser utilizado");
+      throw new AppError("Este email está sendo utilizado");
     }
-
-    if (customer.password.length < 7) {
-      throw new AppError("Tamanho minimo para senha é de 8 digitos");
-    }
-
     customer.password = await hash(customer.password.valueOf(), 8);
 
     const userId = await this.userRepository.create(customer);
