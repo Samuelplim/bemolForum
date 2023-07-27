@@ -6,5 +6,6 @@ const topicsRouter = Router();
 const topicsController = new TopicsController();
 
 topicsRouter.post("/", topicsController.create);
+topicsRouter.get("/", topicsController.index);
 
 export { topicsRouter };

@@ -8,6 +8,10 @@ class TopicsService {
     this.topicsRepository = topicsRepository;
   }
 
+  async index() {
+    return await this.topicsRepository.index();
+  }
+
   async create(topics: TopicsInterface) {
     if (!topics.title || !topics.content) {
       throw new AppError("Preencha o titulo e a descrição");
