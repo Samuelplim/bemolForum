@@ -12,6 +12,16 @@ class TopicsService {
     return await this.topicsRepository.index();
   }
 
+  async findById(topic: Partial<TopicsInterface>) {
+    const topics = "sim";
+    console.log(await this.topicsRepository.findById(topic));
+    if (!topics) {
+      throw new AppError("Topico não encontrado!");
+    }
+
+    return topics;
+  }
+
   async create(topics: TopicsInterface) {
     if (!topics.title || !topics.content) {
       throw new AppError("Preencha o titulo e a descrição");

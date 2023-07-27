@@ -6,6 +6,10 @@ class TopicsRepository {
     return Topics.find();
   }
 
+  findById(_id: Partial<TopicsInterface>) {
+    return Topics.findOne({ _id });
+  }
+
   findByTitle(title: string) {
     return Topics.findOne({ title });
   }

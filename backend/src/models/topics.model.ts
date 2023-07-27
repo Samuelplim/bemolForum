@@ -6,6 +6,13 @@ export const topicsSchema = new Schema<TopicsInterface>({
   content: { type: String, required: true },
   author: { type: Schema.Types.ObjectId },
   createdAt: { type: Date, default: Date.now },
+  comments: [
+    {
+      content: { type: String },
+      author: { type: Schema.Types.ObjectId },
+      createdAt: { type: Date, default: Date.now },
+    },
+  ],
 });
 
 export const Topics = mongoose.model<TopicsInterface>("Topics", topicsSchema);

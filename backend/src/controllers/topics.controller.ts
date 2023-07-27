@@ -11,6 +11,14 @@ class TopicsController {
     return response.status(200).json(topics);
   }
 
+  async findById(request: Request, response: Response) {
+    const topicsRepository = new TopicsRepository();
+    const topicsService = new TopicsService(topicsRepository);
+    const topic = await topicsService.findById(request.body);
+
+    return response.status(200).json(topic);
+  }
+
   async create(request: Request, response: Response) {
     const topicsRepository = new TopicsRepository();
     const topicsService = new TopicsService(topicsRepository);
