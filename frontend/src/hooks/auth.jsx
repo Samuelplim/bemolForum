@@ -10,13 +10,15 @@ const [data, setData] = useState({})
 
 //função para fazer a autenticação do usuário
 async function signIn({ email, password}){
+  const localstorageUser = "@rocketmovies:user"
+  const localstorageToken = "@rocketmovies:token"
   try {
     const response = await api.post("/sessions", { email, password })
     const { user, token } = response.data
 
-    localStorage.setItem("@rocketmovies:user", JSON.stringify(
+    localStorage.setItem(localstorageUser, JSON.stringify(
     user))
-    localStorage.setItem("@rocketmovies:token", token)
+    localStorage.setItem(localstorageToken, token)
 
      //Para inserir um token do tipo Bearer de autorização no cabeçalho de todas as requisições que um user fazer
     api.defaults.headers.common['Authorization'] = `Bearer ${token}`
@@ -34,8 +36,8 @@ async function signIn({ email, password}){
 
 //Função para sair do app e voltar a página de login
 function signOut(){
-  localStorage.removeItem("@rocketmovies:token")
-  localStorage.removeItem("@rocketmovies:user")
+  localStorage.removeItem(localstorageUser)
+  localStorage.removeItem(localstorageToken)
 
   setData({})
 }
@@ -59,7 +61,7 @@ async function updateProfile({ user, avatarFile }){
        alert("Perfil actualizado com sucesso!")
 
     //actualizar os dados no localStorage
-    localStorage.setItem("@rocketmovies:user", JSON.stringify(user))
+    localStorage.setItem(localstorageUser, JSON.stringify(user))
 
  
 
@@ -75,8 +77,8 @@ async function updateProfile({ user, avatarFile }){
 
 //sempre que a página for recarregada mantém o usuário na página home
 useEffect(() => {
-  const token = localStorage.getItem("@rocketmovies:token")
-  const user = localStorage.getItem("@rocketmovies:user")
+  const token = localStorage.getItem(localstorageToken)
+  const user = localStorage.getItem(localstorageUser)
 
   if(token && user){
     api.defaults.headers.common['Authorization'] = `Bearer ${token}`
