@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { ButtonLarge, NavMenu, VerticalList } from "../components";
+import { ButtonLarge, NavMenu, VerticalList, Footer } from "../components";
 import { io } from "socket.io-client";
 import { indexTopics } from "../services/topics.services";
 
@@ -56,6 +56,7 @@ export const HomePage = () => {
      )):(<div className="h-full items-center flex px-4"> <p className="font-medium text-center">Não encontrei nenhum topico no momento, tente criar um novo topico ou volte mais tarde!</p></div>)}
      </section>
     </main>
+    <Footer />
     </>
   );
 };
