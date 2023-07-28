@@ -7,6 +7,6 @@ const topicsController = new TopicsController();
 
 topicsRouter.post("/", topicsController.create);
 topicsRouter.get("/", topicsController.index);
-topicsRouter.get("/findById", topicsController.findById);
+topicsRouter.post("/findById", topicsController.findById);
 
 export { topicsRouter };
