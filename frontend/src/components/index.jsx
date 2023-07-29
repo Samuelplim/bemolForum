@@ -2,7 +2,7 @@ import { ButtonLarge } from "./ButtonLarge";
 import { InputLarge } from "./InputLarge";
 import { LinkLight } from "./LinkLight";
 import { NavMenu } from "./NavMenu";
-import { VerticalList } from "./VerticalList";
 import { Footer } from "./Footer";
+import { VerticalList } from "./VerticalList";
 
-export { ButtonLarge, InputLarge, LinkLight, NavMenu, VerticalList, Footer };
+export { ButtonLarge, InputLarge, LinkLight, NavMenu, Footer, VerticalList };

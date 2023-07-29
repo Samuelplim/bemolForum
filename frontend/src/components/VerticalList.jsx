@@ -1,11 +1,25 @@
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom"
 
-export const VerticalList = ({ topic, ...rest }) => {
+export const VerticalList = ({data}) => {
+
+  const navigate = useNavigate();
+
+  function handleTopicPreview(id){
+    navigate(`/topics/${id}`)
+  }
 
 
+  const _renderItems = (item, index) => {
+    return (
+    <div key={index} className="py-2 bg-gradient-to-t from-white to-slate-100" onClick={()=>handleTopicPreview(item._id)}>
+      <p className="ml-2 font-medium capitalize">{item.title}</p>
+      <p className="ml-2 text-sm mb-2">{item.content}</p>
+      <div className="h-1 bg-tints-cake-100"/>
+    </div>
+    )}
   return (
-    <div {...rest}>
-      <p>{topic.title}</p>
+    <div>
+      {data.map(_renderItems)}
     </div>
   );
 };
