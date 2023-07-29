@@ -9,7 +9,7 @@ import { FavoritesPage } from "../pages/FavoritesPage";
 export function AppRoutes() {
   return (
     <Routes>
-      <Route path="/" element={<HomePage />} />
+      <Route path="/"  element={<HomePage />} />
       <Route path="/topics/:id" element={<TopicPage />} />
       <Route path="/plates" element={<PlatesPage />} />
       <Route path="/ordered" element={<OrderedPage />} />
