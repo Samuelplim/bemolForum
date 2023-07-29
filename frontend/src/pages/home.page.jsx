@@ -1,14 +1,10 @@
-import { useEffect, useState } from "react";
-import { ButtonLarge, NavMenu, VerticalList, Footer } from "../components";
-import { io } from "socket.io-client";
+import React,{ useEffect, useState } from "react";
+import { ButtonLarge, NavMenu, Footer, VerticalList } from "../components";
 import { indexTopics } from "../services/topics.services";
 
-
-
+const topics = await indexTopics().then(respons=>{return respons.data})
 export const HomePage = () => {
-
-  const {topics, setTopics} = useState([])
-
+  
   /*
   useEffect(() => {
     // Connect to the Socket.IO server
@@ -32,14 +28,6 @@ export const HomePage = () => {
   }, []);
 */
 
-  useEffect(() => {
-/*
-    (async () =>{
-      const response = await indexTopics()
-      setTopics(response);
-    })()
-*/
-  },[])
 
   return (
     <>
@@ -49,11 +37,10 @@ export const HomePage = () => {
       <p>Não encontrou o que procura?</p>
       <ButtonLarge title="criar um topico" className="" />
     </div>
-
-    <section className=" bg-light-200 mt-4 h-96">
-     {topics ? topics.map(topic => (
-      <VerticalList key={String(topic._id)} data={topic} />
-     )):(<div className="h-full items-center flex px-4"> <p className="font-medium text-center">Não encontrei nenhum topico no momento, tente criar um novo topico ou volte mais tarde!</p></div>)}
+    
+    <section className="mt-4 h-96">
+      <p className="pl-2 font-medium text-lg">Topicos</p>
+      {topics? <VerticalList data={topics}/>:(<div className="h-full items-center flex px-4"> <p className="font-medium text-center">Não encontrei nenhum topico no momento, tente criar um novo topico ou volte mais tarde!</p></div>)}
      </section>
     </main>
     <Footer />
