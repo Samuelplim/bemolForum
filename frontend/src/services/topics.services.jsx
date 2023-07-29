@@ -10,7 +10,7 @@ export  const createTopics = async (topics) => {
   return response;
 }
 
-export const FindByIdTopics = async (topics) => {
-  const response = await backendApi.post("/topics/findById",topics);
+export const FindByIdTopics = async (_id) => {
+  const response = await backendApi.post("/topics/findById",_id);
   return response;
 }
