@@ -1,5 +1,5 @@
 import { UserIcon } from '@heroicons/react/24/solid'
-import { LinkLight, InputLarge, ButtonLarge } from ".";
+import { InputLarge } from ".";
 import OptionsSVG from "../assets/marca-bemol.svg";
 import MagngierSVG from "../assets/magnifier.svg";
 
