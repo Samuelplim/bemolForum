@@ -4,8 +4,8 @@ export const VerticalList = ({data}) => {
 
   const navigate = useNavigate();
 
-  function handleTopicPreview(id){
-    navigate(`/topics/${id}`)
+  function handleTopicPreview(_id){
+    navigate(`/topics/${_id}`)
   }
 
 
