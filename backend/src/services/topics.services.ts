@@ -12,8 +12,12 @@ class TopicsService {
     return await this.topicsRepository.index();
   }
 
-  async findById(topic: Partial<TopicsInterface>) {
-    return await this.topicsRepository.findById(topic);
+  async findById(topicId: Partial<TopicsInterface>) {
+    const topic = this.topicsRepository.findById(topicId);
+    if (!topic) {
+      throw new AppError("Tópico não encontrado");
+    }
+    return topic;
   }
 
   async create(topics: TopicsInterface) {

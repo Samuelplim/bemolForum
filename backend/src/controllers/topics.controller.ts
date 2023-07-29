@@ -14,8 +14,7 @@ class TopicsController {
   async findById(request: Request, response: Response) {
     const topicsRepository = new TopicsRepository();
     const topicsService = new TopicsService(topicsRepository);
-    const topic = await topicsService.findById(request.body);
-
+    const topic = await topicsService.findById(request.body.id);
     return response.status(200).json(topic);
   }
 
