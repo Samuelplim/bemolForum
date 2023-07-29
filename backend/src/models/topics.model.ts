@@ -12,7 +12,10 @@ export const topicsSchema = new Schema<TopicsInterface>({
   comments: [
     {
       content: { type: String },
-      author: { type: Schema.Types.ObjectId },
+      author: {
+        _id: { type: Schema.Types.ObjectId, required: true },
+        name: { type: String, required: true },
+      },
       createdAt: { type: Date, default: Date.now },
     },
   ],
