@@ -1,11 +1,16 @@
-export const InputLarge = ({title, placeholder, icon})=> {
+import { MagnifyingGlassIcon, PaperAirplaneIcon } from '@heroicons/react/24/solid'
+export const InputLarge = ({title, placeholder, paperAirPlane, magnifyingGlass, ...rest})=> {
 
   return  (
-  <div className="w-full flex flex-col items-start gap-2">
+  <div className="w-full flex flex-col items-start gap-2" {...rest}>
     <span className="text-dark-400">{title}</span>
-    <div className="w-full flex bg-light-100  rounded-lg">
+    <div className="w-full flex bg-light-100  rounded-lg border-tints-cake-200 border-2">
       <input placeholder={placeholder} type="text" className="w-full px-3.5 py-3 rounded-lg"/>
-      { icon && <button className="mr-1"><img src={icon} alt="icon" /></button>}
+      { paperAirPlane && <button className="mr-1"><PaperAirplaneIcon className="h-6 w-6 text-tints-cake-200"/></button>}
+      
+      {magnifyingGlass && <button className="mr-1">
+        <MagnifyingGlassIcon className="h-6 w-6 text-tints-cake-200"/>
+      </button>}
     </div>
   </div>
   )
