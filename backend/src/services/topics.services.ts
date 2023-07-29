@@ -13,9 +13,9 @@ class TopicsService {
   }
 
   async findById(topicId: Partial<TopicsInterface>) {
-    const topic = this.topicsRepository.findById(topicId);
+    const topic = await this.topicsRepository.findById(topicId);
     if (!topic) {
-      throw new AppError("Tópico não encontrado");
+      throw new AppError("Tópico não encontrado", 404);
     }
     return topic;
   }
