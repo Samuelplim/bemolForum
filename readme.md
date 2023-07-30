@@ -29,7 +29,7 @@ A ideia para a solução do problema apresentando é criar uma API REST que mesc
   
   ✅ Criação de um cliente.
 </br><br>
-- FRONTEND: Desenvolvido em vite + react + tailwindcss
+- FRONTEND: Desenvolvido em vite + react + tailwindcss utilizando o conceito mobile first.
 - Telas implementadas
   
   ✅ Tela para o usuario entrar na aplicação.
