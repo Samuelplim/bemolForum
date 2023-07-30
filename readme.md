@@ -21,19 +21,27 @@ A ideia para a solução do problema apresentando é criar uma API REST que mesc
 
 - BACKEND: Desenvolvido em nodejs + TypeScript utilizando o banco de dados mongoDB
 - Funcionalidades implementadas
+  
   ✅ Criar um post.
+  
   ✅ Criar um comentario no post.
+  
   ✅ Buscar post por ID.
+  
   ✅ Lista dos post criados.
+  
   ✅ Criação de um token de autenticação.
+  
   ✅ Criação de um cliente.
   </br><br>
 - FRONTEND: Desenvolvido em vite + react + tailwindcss utilizando o conceito mobile first.
 - Telas implementadas
+  
+ ✅ Tela para o usuario entrar na aplicação.
+
+✅ Tela Home apresenta a lista dos posts criados.
+
+✅ Tela Topic apresenta o post e comentarios.
 
 ## Preview <a name="preview"></a>
 ![preview](.github/context.drawio.png)
-
-  ✅ Tela Home apresenta a lista dos posts criados.
-
-  ✅ Tela Topic apresenta o post e comentarios.
