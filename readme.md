@@ -11,6 +11,11 @@ Forum Bemol processo seletivo
 ## About <a name="about"></a>
 
 A ideia para a solução do problema apresentando é criar uma API REST que mescle as tecnologias EXPRESS e Socket.io. O EXPRESS lidaria com requisições assíncronas, e o Socket.IO lidaria com as requisições em tempo real como as mensagens de texto nos tópicos criados.
+O front end foi construido utilizando o conceito de mobile first.
+
+<br></br>
+
+A ideia para a solução do problema apresentando é criar uma API REST que mescle as tecnologias EXPRESS e Socket.io. O EXPRESS lidaria com requisições assíncronas, e o Socket.IO lidaria com as requisições em tempo real como as mensagens de texto nos tópicos criados.
 
 <br></br>
 
@@ -23,7 +28,7 @@ A ideia para a solução do problema apresentando é criar uma API REST que mesc
   ✅ Criação de um token de autenticação.
   ✅ Criação de um cliente.
   </br><br>
-- FRONTEND: Desenvolvido em vite + react + tailwindcss
+- FRONTEND: Desenvolvido em vite + react + tailwindcss utilizando o conceito mobile first.
 - Telas implementadas
 
   ✅ Tela para o usuario entrar na aplicação.

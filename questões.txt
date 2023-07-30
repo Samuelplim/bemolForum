@@ -1,0 +1,31 @@
+Responda sucintamente os itens a seguir em um .txt levando as perguntas e as
+respostas para o controle de versão da maneira que julgar mais apropriado:
+
+1. A solução deve ser disponibilizada em Cloud ou On-premise?
+Depende! Se a Bemol possui uma equipe de TI especializada, um data center com alta disponibilidade, e os clientes da aplicação são principalmente internos ou localizados no Brasil, a opção On-premise pode ser uma escolha válida. Isso permitirá que a organização tenha controle total sobre a infraestrutura, segurança e manutenção dos servidores, garantindo que atendam a requisitos específicos e regulamentações internas.
+Por outro lado, se a equipe não possui expertise em infraestrutura ou a empresa não deseja investir em um data center próprio, a abordagem Cloud pode ser mais apropriada. Os provedores de serviços em nuvem oferecem infraestrutura altamente escalável, disponibilidade confiável e uma ampla gama de serviços gerenciados que facilitam o desenvolvimento e implantação de aplicações.
+Além disso, se a aplicação tiver alcance global ou se os usuários estiverem distribuídos em diferentes localidades, a infraestrutura em nuvem pode oferecer uma melhor latência e desempenho, uma vez que os data centers dos provedores de nuvem estão geralmente distribuídos geograficamente. 
+
+2. Considerando a participação de 4 pessoas técnicas para o desenvolvimento dessa solução,
+responda qual ferramenta acreditas ser apropriada para o controle de tarefas da equipe,
+a ferramenta é ágil?
+O Jira seria uma escolha apropriada para o controle de tarefas da equipe nesse cenário com desenvolvedores back-end, front-end, mobile e um DevOps. O Jira oferece flexibilidade e é baseado nos conceitos de quadros Kanban e quadros Scrum, o que se encaixa bem em projetos de desenvolvimento de software com diferentes especializações.
+
+Aqui está como o Jira pode ser usado por cada membro da equipe:
+
+Desenvolvedor Back-end: O desenvolvedor back-end pode utilizar o Jira para criar e acompanhar tarefas relacionadas à construção e integração com os serviços já existentes da Bemol, como implementação do login dos clientes na aplicação, desenvolvimento de APIs e integração com o banco de dados.
+
+Desenvolvedor Front-end: O desenvolvedor front-end pode utilizar o Jira para criar tarefas relacionadas à construção do front-end da aplicação, integração com a API do back-end e implementação de recursos de interface do usuário.
+
+Desenvolvedor Mobile: O desenvolvedor mobile pode usar o Jira para gerenciar tarefas relacionadas à criação da aplicação móvel, desenvolvimento de funcionalidades específicas para dispositivos móveis e integração com as APIs fornecidas pelos outros membros da equipe.
+
+DevOps: O DevOps pode utilizar o Jira para criar e acompanhar tarefas relacionadas à infraestrutura da aplicação, implementação de práticas de observabilidade e garantia de escalabilidade robusta, como configuração de servidores, gerenciamento de contêineres e pipelines de implantação.
+
+3. Você se sente capaz de liderar esta equipe? Por quê?
+Sim, acredito que a liderança é uma habilidade multidisciplinar e ao longo dos meus empregos anteriores, destaquei-me como líder devido à minha capacidade de lidar com pessoas e orientá-las no processo de aprendizagem dentro da organização. Estou aberto(a) a feedbacks e sempre busco melhorias, tanto para mim quanto para a equipe, de forma colaborativa. Acredito que uma liderança eficaz envolve ouvir as necessidades e ideias de todos, incentivando o desenvolvimento profissional e promovendo um ambiente de trabalho positivo e produtivo. 
+
+4. Se pudesse sugerir uma melhoria, mudança ou oportunidade. O que seria?
+Peço a oportunidade de fazer parte desta organização, pois acredito que é o ambiente ideal para o aprimoramento das minhas habilidades como desenvolvedor e líder. Tenho grande interesse em promover mudanças positivas dentro da equipe e contribuir para o crescimento da empresa.
+
+5. Acha válido esse desafio para o processo que está participando?
+Sim, considero o desafio válido e extremamente relevante, pois abrange todas as partes essenciais do desenvolvimento de uma aplicação. Desde a concepção inicial até a implementação do backend e frontend, é uma oportunidade completa para aprimorar habilidades em todas as áreas. Além disso, enfrentar esse desafio proporciona uma experiência valiosa para entender o ciclo completo de desenvolvimento de software, bem como lidar com os desafios específicos de cada etapa. Estou empolgado em participar e aproveitar ao máximo essa oportunidade para expandir meus conhecimentos e aprofundar minha experiência no desenvolvimento de aplicações completas e bem-sucedidas.
