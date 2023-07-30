@@ -31,7 +31,8 @@ A ideia para a solução do problema apresentando é criar uma API REST que mesc
 - FRONTEND: Desenvolvido em vite + react + tailwindcss utilizando o conceito mobile first.
 - Telas implementadas
 
-  ✅ Tela para o usuario entrar na aplicação.
+## Preview <a name="preview"></a>
+![preview](.github/context.drawio.png)
 
   ✅ Tela Home apresenta a lista dos posts criados.
 
