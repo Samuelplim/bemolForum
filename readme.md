@@ -24,8 +24,7 @@ Forum Bemol processo seletivo
   ✅ Criação de um token de autenticação.
   
   ✅ Criação de um cliente.
-
-
+</br><br>
 - FRONTEND: Desenvolvido em vite + react + tailwindcss
 - Telas implementadas
   
