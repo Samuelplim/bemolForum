@@ -18,8 +18,8 @@ class CustomerRepository {
     return Customer.updateOne({ document: document }, { $set: customer });
   }
 
-  remove(document: string) {
-    return Customer.deleteOne({ document: document });
+  remove(cpf: string) {
+    return Customer.deleteOne({ cpf });
   }
 }
 

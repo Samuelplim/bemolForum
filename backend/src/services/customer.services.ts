@@ -1,5 +1,5 @@
 import { CustomerInterface } from "../interfaces";
-import { hash } from "bcrypt";
+import { compare, hash } from "bcrypt";
 import { AppError } from "../utils/AppError";
 
 class CustomerService {
@@ -23,6 +23,32 @@ class CustomerService {
 
     const userId = await this.userRepository.create(customer);
     return userId;
+  }
+
+  async findByEmail(customer: CustomerInterface) {
+    const customerResponse = await this.userRepository.findByEmail(
+      customer.email
+    );
+    if (!customerResponse) {
+      throw new AppError("E-mail e/ou senha incorrecto(a)", 401);
+    }
+    const passwordVerification = await compare(
+      customer.password.valueOf(),
+      customerResponse.password
+    );
+
+    if (!passwordVerification) {
+      throw new AppError("E-mail e/ou senha incorrecto(a)", 401);
+    }
+
+    return customerResponse;
+  }
+  async remove({ cpf }: { cpf: string }) {
+    console.log("log", cpf);
+    const customerResponse = await this.userRepository.remove(cpf);
+    console.log("log 2", customerResponse);
+
+    return customerResponse;
   }
 }
 
