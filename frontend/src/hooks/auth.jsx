@@ -5,32 +5,49 @@ import { createSessions, setAuthToken } from "../services/sessions.service";
 export const AuthContext = createContext({})
 
 function AuthProvider({ children }){
-const [data, setData] = useState({})
-const localstorageCustomer = "@forumBemol:customer"
-const localstorageToken = "@forumBemol:token"
+  const [data, setData] = useState({})
+  const localstorageCustomer = "@forumBemol:customer"
+  const localstorageToken = "@forumBemol:token"
 
-async function signIn({ email, password}){
-  try {
-    const response = await createSessions({email, password});
-    const {customer, token} = response.data
+  async function signIn({ email, password}){
+    try {
+      const response = await createSessions({email, password});
+      const {customer, token} = response.data
 
-    localStorage.setItem(localstorageCustomer, JSON.stringify(customer))
-    localStorage.setItem(localstorageToken, token)
-    setAuthToken(token)
+      localStorage.setItem(localstorageCustomer, JSON.stringify(customer))
+      localStorage.setItem(localstorageToken, token)
+      setAuthToken(token)
 
-    setData({customer, token})
+      setData({customer, token})
 
-  } catch (error) {
-    if(error.response){
-      alert(error.response.data.message)
-    } else {
-      alert("Não foi possível entrar.")
+    } catch (error) {
+      if(error.response){
+        alert(error.response.data.message)
+      } else {
+        alert("Não foi possível entrar.")
+      }
     }
   }
-}
+  function signOut(){
+    localStorage.removeItem(localstorageToken)
+    localStorage.removeItem(localstorageCustomer)
+
+    setData({})
+  }
+
+  useEffect(()=>{
+    const token = localStorage.getItem(localstorageToken)
+    const customer = localStorage.getItem(localstorageCustomer)
+
+    if(token && customer){
+      setAuthToken(token)
+
+      setData({token, customer:JSON.parse(customer)})
+    }
+  },[])
 
   return(
-    <AuthContext.Provider value={{ signIn}}>
+    <AuthContext.Provider value={{ signIn, signOut, customer: data.customer}}>
       {children}
     </AuthContext.Provider>
   )
