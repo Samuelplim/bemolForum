@@ -28,7 +28,7 @@ export const TopicPage = ()=> {
         <span className="text-xs">Assunto</span>
         <p>{data.data.content}</p>
         <div className="h-1 w-full bg-blue-100"/>
-        <CommentsList comments={data.data.comments} />
+        <CommentsList comments={data.data.comments}/>
       </div>
       :<p>Carregando</p>}
       <InputLarge placeholder={"Menssagem"} paperAirPlane/>

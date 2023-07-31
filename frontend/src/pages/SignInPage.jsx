@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import { ButtonLarge, InputLarge } from "../components";
+import { ButtonLarge, InputLarge, LinkLight } from "../components";
 import MarcaBemol from "../assets/marca-bemol.svg";
 import { useAuth } from "../hooks/auth";
 
@@ -25,5 +25,6 @@ export const SingInPage = ()=> {
     <InputLarge title="Seu email" placeholder="email" onChange={e => setEmail(e.target.value)}/>
     <InputLarge title="Sua senha" placeholder="senha" onChange={e => setPassword(e.target.value)}/>
     <ButtonLarge title={"Entrar"} onClick={handleSignIn}/>
+    <LinkLight title={"Criar conta"} to="/register"/>
   </main>
   )}
