@@ -44,9 +44,7 @@ class CustomerService {
     return customerResponse;
   }
   async remove({ cpf }: { cpf: string }) {
-    console.log("log", cpf);
     const customerResponse = await this.userRepository.remove(cpf);
-    console.log("log 2", customerResponse);
 
     return customerResponse;
   }
