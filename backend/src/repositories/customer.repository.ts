@@ -14,8 +14,8 @@ class CustomerRepository {
     return Customer.create(customer);
   }
 
-  update(document: string, customer: Partial<CustomerInterface>) {
-    return Customer.updateOne({ document: document }, { $set: customer });
+  update(cpf: string, customer: Partial<CustomerInterface>) {
+    return Customer.updateOne({ cpf }, { $set: customer });
   }
 
   remove(cpf: string) {
