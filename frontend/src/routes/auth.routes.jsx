@@ -7,7 +7,7 @@ export function AuthRoutes(){
   return(
     <Routes>
       <Route path="/" element={<SingInPage />}/>
-      <Route path="/register:_id" element={<SingUpPage />}/>
+      <Route path="/register" element={<SingUpPage />}/>
     </Routes>
   )
 }
