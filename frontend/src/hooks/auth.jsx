@@ -4,23 +4,22 @@ import { createSessions, setAuthToken } from "../services/sessions.service";
 
 export const AuthContext = createContext({})
 
-function AuthProvider( children ){
+function AuthProvider({ children }){
 const [data, setData] = useState({})
+const localstorageCustomer = "@forumBemol:customer"
+const localstorageToken = "@forumBemol:token"
 
 async function signIn({ email, password}){
-  const localstorageUser = "@forumBemol:user"
-  const localstorageToken = "@forumBemol:token"
   try {
-    const response = await createSessions({ email, password })
-    const { user, token } = response.data
+    const response = await createSessions({email, password});
+    const {customer, token} = response.data
 
-    localStorage.setItem(localstorageUser, JSON.stringify(user))
+    localStorage.setItem(localstorageCustomer, JSON.stringify(customer))
     localStorage.setItem(localstorageToken, token)
-
     setAuthToken(token)
 
-    setData({user, token})
-    
+    setData({customer, token})
+
   } catch (error) {
     if(error.response){
       alert(error.response.data.message)
@@ -30,35 +29,8 @@ async function signIn({ email, password}){
   }
 }
 
-function signOut(){
-  localStorage.removeItem(localstorageUser)
-  localStorage.removeItem(localstorageToken)
-
-  setData({})
-}
-
-useEffect(() => {
-  const token = localStorage.getItem(localstorageToken)
-  const user = localStorage.getItem(localstorageUser)
-
-  if(token && user){
-    setAuthToken(token)
-
-    setData({
-      token,
-      user:JSON.parse(user)
-    })
-
-  }
-}, [])
-
   return(
-    <AuthContext.Provider value={{
-      signIn, 
-      signOut,
-      updateProfile,
-      user: data.user
-    }}>
+    <AuthContext.Provider value={{ signIn}}>
       {children}
     </AuthContext.Provider>
   )

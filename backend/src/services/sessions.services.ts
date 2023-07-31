@@ -11,16 +11,14 @@ class SessionsService {
     this.sessionsRepository = sessionsRepository;
   }
 
-  async create(customer: { email: string; password: string }) {
-    const customerResponse = await this.sessionsRepository.findByEmail(
-      customer.email
-    );
-    if (!customerResponse) {
+  async create(customerG: { email: string; password: string }) {
+    const customer = await this.sessionsRepository.findByEmail(customerG.email);
+    if (!customer) {
       throw new AppError("E-mail e/ou senha incorrecto(a)", 401);
     }
     const passwordVerification = await compare(
-      customer.password,
-      customerResponse.password
+      customerG.password,
+      customer.password
     );
 
     if (!passwordVerification) {
@@ -30,11 +28,11 @@ class SessionsService {
     const { secret, expiresIn } = authConfig;
 
     const token = jwt.sign({}, secret, {
-      subject: customer.email,
+      subject: customerG.email,
       expiresIn,
     });
 
-    return { token, customerResponse };
+    return { token, customer };
   }
 }
 
