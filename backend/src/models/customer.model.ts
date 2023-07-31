@@ -4,6 +4,7 @@ import { CustomerInterface } from "../interfaces";
 export const customerSchema = new Schema<CustomerInterface>({
   name: { type: String },
   email: { type: String },
+  cpf: { type: String },
   password: { type: String },
   address: { type: String },
   createdAt: { type: Date, default: new Date() },
