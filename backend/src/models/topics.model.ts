@@ -8,6 +8,7 @@ export const topicsSchema = new Schema<TopicsInterface>({
     _id: { type: Schema.Types.ObjectId, required: true },
     name: { type: String, required: true },
   },
+  socket: { type: String },
   createdAt: { type: Date, default: Date.now },
   comments: [
     {
