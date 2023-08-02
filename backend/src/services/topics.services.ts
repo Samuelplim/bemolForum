@@ -32,6 +32,9 @@ class TopicsService {
 
   async update(topicRes: TopicsInterface) {
     const topic = await this.topicsRepository.update(topicRes);
+    if (!topic) {
+      throw new AppError("Erro topico não encontrado");
+    }
     return topic;
   }
 }
