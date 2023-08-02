@@ -29,6 +29,11 @@ class TopicsService {
 
     return topic;
   }
+
+  async update(topicRes: TopicsInterface) {
+    const topic = await this.topicsRepository.update(topicRes);
+    return topic;
+  }
 }
 
 export { TopicsService };
