@@ -18,8 +18,8 @@ class TopicsRepository {
     return Topics.create(topic);
   }
 
-  update(content: string, author: Partial<TopicsInterface>) {
-    return Topics.updateOne({ content }, { $set: author });
+  update(topic: Partial<TopicsInterface>) {
+    return Topics.updateOne({ topic });
   }
 }
 
