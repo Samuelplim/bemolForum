@@ -18,8 +18,8 @@ class TopicsRepository {
     return Topics.create(topic);
   }
 
-  update(topic: Partial<TopicsInterface>) {
-    return Topics.updateOne({ topic });
+  update(_id: string, topic: Partial<TopicsInterface>) {
+    return Topics.updateOne({ _id }, topic);
   }
 }
 

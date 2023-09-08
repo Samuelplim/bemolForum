@@ -1,9 +1,8 @@
 import { DateTime } from "luxon"
 
-import { useAuth } from "../hooks/auth"
 
-export const CommentsList = ({comments, ...rest }) => {
-  const { customer } = useAuth()
+export const CommentsList = ({comments, customer ,...rest }) => {
+
   const _renderItems = (item, index)=>{
     const isAthor = item.author._id ===customer._id
     return (

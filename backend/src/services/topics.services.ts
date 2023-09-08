@@ -30,12 +30,15 @@ class TopicsService {
     return topic;
   }
 
-  async update(topicRes: TopicsInterface) {
-    const topic = await this.topicsRepository.update(topicRes);
-    if (!topic) {
+  async update(topic: TopicsInterface) {
+    if (!(await this.topicsRepository.findById(topic._id))) {
       throw new AppError("Erro topico não encontrado");
     }
-    return topic;
+    const res = await this.topicsRepository.update(topic._id, topic);
+    if (!res) {
+      throw new AppError("Erro topico não encontrado");
+    }
+    return res;
   }
 }
 
